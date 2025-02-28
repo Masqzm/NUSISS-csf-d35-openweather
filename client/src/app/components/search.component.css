@@ -1,0 +1,27 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    margin-top: 5vh;
+
+    text-align: center;
+}
+
+td {
+    padding: 0 10px;
+}
+
+.savedResults {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 40vw;
+}
+.savedResults td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}

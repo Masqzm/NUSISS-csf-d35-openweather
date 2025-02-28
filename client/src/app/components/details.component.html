@@ -1,0 +1,71 @@
+<div class="center">
+    <h3>{{ city }}</h3>
+</div>
+
+<!-- Display city weatherInfo here if it exists -->
+@if (result$ | async; as weatherInfo) {
+    <div class="container">
+        <div class="info-card">
+            <h2>Condition</h2>
+            <div class="container-inner">
+                @for (wc of weatherInfo.weathers; track $index) {
+                    <!-- DEBUG -->
+                    <!-- <p>{{ wc | json }}</p>   -->
+                    <div class="info-card-inner">
+                        <img [src]="wc.icon">
+                        <p>
+                            <span>{{ wc.main }}</span>
+                            (<span class="desc">{{ wc.description }}</span>)
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h2>Temperature</h2>
+            <h3>{{weatherInfo.temp}}°C</h3>
+            <div>Feels like: {{weatherInfo.feels_like}}</div>
+            <br>
+            <div>Low: {{weatherInfo.temp_min}}°C | High: {{weatherInfo.temp_max}}°C
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h2>Wind</h2>
+            <h3>{{weatherInfo.wind_spd}} m/s</h3>
+            <br>
+            Direction: {{weatherInfo.wind_deg}}°
+        </div>
+        
+        <div class="info-card">
+            <h2>Measured at</h2>
+
+            <h3>{{weatherInfo.measuredDateTime | date:"h:mm a"}}</h3>
+            <h3>{{weatherInfo.measuredDateTime | date:"MMM dd, yyyy"}}</h3>
+        </div>
+
+        <div class="info-card">
+            <h2>Visibility</h2>
+            <h3>{{weatherInfo.visibility}} m</h3>
+        </div>
+        
+        <div class="info-card">
+            <h2>Humidity & Pressure</h2>
+            <h3>{{weatherInfo.humidity}}% | {{weatherInfo.pressure}} hPa</h3>
+        </div>
+    </div>
+    <div>
+        <p id="cacheInfo">Data retrieved from cache:
+            <code>{{ weatherInfo.isFromCache }}</code>
+        </p>
+    </div>
+} @else {
+    <div class="center">
+        <h2>City or weather details does not exist in OWM!</h2>
+    </div>
+}
+
+<div class="center">
+    <button type="button" [routerLink]="['/']">Back</button>
+</div>

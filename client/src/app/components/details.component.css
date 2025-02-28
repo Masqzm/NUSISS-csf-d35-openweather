@@ -1,0 +1,74 @@
+.center, button {
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    justify-content: center;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 40vw;    
+}
+
+table td, table th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+#weatherInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.container {
+    margin-top: 2vh;
+
+    display: grid;
+	grid-template-columns: repeat(3, 1fr);
+    row-gap: 2vh;
+    column-gap: 2vw;
+
+    justify-self: center; 
+}
+.info-card {
+    text-align: center;
+    border: solid 2px;
+	width: 25vw;
+	/* border-radius: 8px; */
+
+    padding: 20px 10px 40px;
+}
+
+.container-inner {
+    display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	row-gap: 2vh;
+}
+.info-card-inner {
+    text-align: center;
+    /* border: solid 1px; */
+    /* padding: 0px 10px 25px; */
+}
+
+h3 {
+    font-size: 40px;
+    margin: 30px;
+}
+
+img {
+    background-color: grey;
+}
+
+.desc {
+    font-style: italic;
+}
+
+#cacheInfo {
+    text-align: center;
+}

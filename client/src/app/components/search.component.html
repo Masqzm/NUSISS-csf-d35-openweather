@@ -1,0 +1,19 @@
+<div class="body">
+  <form [formGroup]="form" (submit)="add()">
+    <table>
+      <tr>
+        <td class="searchText">City</td>
+        <td> <input type="text" size="30" formControlName="city"> </td>
+        <td> <button type="submit" [disabled]="form.invalid">Add</button> </td>
+      </tr>
+    </table>
+  </form>
+
+  <table class="savedResults">
+    @for (city of cities; track $index) {
+      <tr>
+          <td><a [routerLink]="['/details/', city]">{{ city }}</a></td>
+      </tr>
+    }
+  </table>
+</div>

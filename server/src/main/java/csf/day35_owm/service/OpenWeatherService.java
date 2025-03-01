@@ -26,7 +26,7 @@ public class OpenWeatherService {
     @Value("${openweathermap.api.key}")
     private String apiKey;
 
-    //https://api.openweathermap.org/data/2.5/weather?q=singapore&units=metric&appid=b11efa596d223bdd417af6ba2d3141a6
+    //https://api.openweathermap.org/data/2.5/weather?q=singapore&units=metric&appid=
     public static final String GET_URL = "https://api.openweathermap.org/data/2.5/weather";
     public static final int CACHE_EXPIRY_MIN = 15;
 
